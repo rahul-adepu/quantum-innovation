@@ -4,6 +4,8 @@ import About from './components/About'
 import Services from './components/Services'
 import Features from './components/Features'
 import Projects from './components/Projects'
+import WhyChooseUs from './components/WhyChooseUs'
+import SecurityApproach from './components/SecurityApproach'
 import Footer from './components/Footer'
 
 function App() {
@@ -16,6 +18,8 @@ function App() {
         <Services />
         <Features />
         <Projects />
+        <WhyChooseUs />
+        <SecurityApproach />
         {/* Additional sections will be added in subsequent phases */}
       </main>
       <Footer />
