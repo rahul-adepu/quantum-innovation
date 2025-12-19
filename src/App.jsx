@@ -8,6 +8,10 @@ import WhyChooseUs from './components/WhyChooseUs'
 import SecurityApproach from './components/SecurityApproach'
 import Pricing from './components/Pricing'
 import Testimonials from './components/Testimonials'
+import Team from './components/Team'
+import CTA from './components/CTA'
+import FAQ from './components/FAQ'
+import Blog from './components/Blog'
 import Footer from './components/Footer'
 
 function App() {
@@ -24,7 +28,10 @@ function App() {
         <SecurityApproach />
         <Pricing />
         <Testimonials />
-        {/* Additional sections will be added in subsequent phases */}
+        <Team />
+        <CTA />
+        <FAQ />
+        <Blog />
       </main>
       <Footer />
     </div>

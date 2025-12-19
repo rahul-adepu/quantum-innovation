@@ -40,6 +40,16 @@ const Footer = () => {
                   Projects
                 </a>
               </li>
+              <li>
+                <a href="#pricing-plan" className="hover:text-blue-400 transition-colors">
+                  Pricing
+                </a>
+              </li>
+              <li>
+                <a href="#testimonials" className="hover:text-blue-400 transition-colors">
+                  Testimonials
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -60,6 +70,16 @@ const Footer = () => {
               <li>
                 <a href="#our-services" className="hover:text-blue-400 transition-colors">
                   AI Automation
+                </a>
+              </li>
+              <li>
+                <a href="#our-services" className="hover:text-blue-400 transition-colors">
+                  Enterprise Security
+                </a>
+              </li>
+              <li>
+                <a href="#our-services" className="hover:text-blue-400 transition-colors">
+                  Penetration Testing
                 </a>
               </li>
               <li>
