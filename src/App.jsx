@@ -1,4 +1,5 @@
 import Navbar from './components/Navbar'
+import Hero from './components/Hero'
 import Footer from './components/Footer'
 
 function App() {
@@ -6,7 +7,8 @@ function App() {
     <div className="min-h-screen bg-white">
       <Navbar />
       <main>
-        {/* Sections will be added in subsequent phases */}
+        <Hero />
+        {/* Additional sections will be added in subsequent phases */}
       </main>
       <Footer />
     </div>
