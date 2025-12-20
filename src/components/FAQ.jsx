@@ -57,7 +57,7 @@ const FAQ = () => {
             </h2>
             <div className="hidden lg:block mt-8">
               <img
-                src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&q=80"
+                src="https://imgs.search.brave.com/hvV9gywJqO-kL6zE9qv5rVhijPyxa8JUyFQOTmFwwrA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9vbmxp/bmVkZWdyZWVzLnNh/bmRpZWdvLmVkdS93/cC1jb250ZW50L3Vw/bG9hZHMvMjAyMC8w/MS9DeWJlcnNlY3Vy/aXR5LWFyY2hpdGVj/dC5qcGVn"
                 alt="Security Professional"
                 className="rounded-xl shadow-lg"
                 loading="lazy"
@@ -70,7 +70,7 @@ const FAQ = () => {
             {faqs.map((faq, index) => (
               <motion.div
                 key={index}
-                className="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-md"
+                className={`bg-white rounded-xl border border-gray-200 overflow-hidden shadow-md ${index === 0 ? 'lg:mt-8' : ''}`}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}

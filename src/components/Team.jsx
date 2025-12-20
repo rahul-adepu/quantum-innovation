@@ -7,28 +7,28 @@ const Team = () => {
       name: 'Ahmed Al-Qureshi',
       title: 'Chief Security Officer',
       certifications: 'CISSP, CISM',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80',
+      image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop&q=80',
       link: '#',
     },
     {
       name: 'Noura Al-Sayed',
       title: 'Lead Cybersecurity Analyst',
       certifications: 'CEH, GCIH',
-      image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80',
+      image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop&q=80',
       link: '#',
     },
     {
       name: 'Omar Abdullah',
       title: 'Incident Response Specialist',
       certifications: 'GCFA, GREM',
-      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80',
+      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&q=80',
       link: '#',
     },
     {
       name: 'Layla Hassan',
       title: 'AI Solutions Architect',
       certifications: 'AWS Certified, Azure AI',
-      image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&q=80',
+      image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&q=80',
       link: '#',
     },
   ]
@@ -102,11 +102,12 @@ const Team = () => {
               className="bg-white rounded-xl overflow-hidden shadow-md border border-gray-100 hover:shadow-lg transition-shadow duration-300 group"
             >
               {/* Image */}
-              <div className="relative h-64 overflow-hidden bg-gray-200">
+              <div className="relative h-64 w-full overflow-hidden bg-gray-200">
                 <img
                   src={member.image}
                   alt={member.name}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500"
+                  style={{ objectPosition: 'center top' }}
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
