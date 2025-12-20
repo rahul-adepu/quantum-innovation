@@ -1,4 +1,4 @@
-import { Radar, Shield, Eye } from 'lucide-react'
+import { Radar, ShieldCheck, Eye } from 'lucide-react'
 import { motion } from 'framer-motion'
 
 const Features = () => {
@@ -9,7 +9,7 @@ const Features = () => {
       description: 'Instantly detect and neutralize threats with AI-powered behavioral analytics, ensuring your systems are always protected from sophisticated cyberattacks and zero-day exploits.',
     },
     {
-      icon: Shield,
+      icon: ShieldCheck,
       title: 'Multi-Layered Malware Protection',
       description: 'Proactively prevent, detect, and eliminate malware at every entry point with next-gen antivirus, EDR/XDR, and AI-powered threat prevention safeguarding all digital assets.',
     },

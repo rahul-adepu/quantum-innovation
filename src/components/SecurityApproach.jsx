@@ -1,22 +1,21 @@
-import { Shield, Lock, FileCheck, CheckCircle } from 'lucide-react'
 import { motion } from 'framer-motion'
 
 const SecurityApproach = () => {
   const pillars = [
     {
-      icon: Shield,
       title: 'Advanced Threat Intelligence Systems',
       description: 'Intelligent AI-powered systems identify risks early, correlate security events in real-time, and strengthen protection across your entire digital environment with predictive analytics.',
+      accent: 'from-blue-500 to-blue-700',
     },
     {
-      icon: Lock,
       title: 'Digital Identity Protection Solutions',
       description: 'Multi-layered identity safeguards prevent unauthorized access and credential misuse, maintaining security across essential business platforms, cloud services, and critical data systems.',
+      accent: 'from-indigo-500 to-indigo-700',
     },
     {
-      icon: FileCheck,
       title: 'Holistic Cyber Risk Governance',
       description: 'Structured governance frameworks identify vulnerabilities early, ensure regulatory compliance, and fortify security across every digital layer with comprehensive risk management effectively.',
+      accent: 'from-purple-500 to-purple-700',
     },
   ]
 
@@ -24,14 +23,17 @@ const SecurityApproach = () => {
     {
       title: 'Cybersecurity Assurance',
       description: 'We protect systems, infrastructure, and sensitive data from unauthorized access, cyber threats, and vulnerabilities using defense-in-depth strategies and continuous monitoring.',
+      accent: 'from-emerald-500 to-emerald-700',
     },
     {
       title: 'Data Access Control',
       description: 'Ensuring only authorized users access critical data through role-based permissions, multi-factor authentication, and preventing unauthorized file duplication or exfiltration.',
+      accent: 'from-cyan-500 to-cyan-700',
     },
     {
       title: 'Network Shielding',
       description: 'We safeguard your network infrastructure by detecting suspicious activity, blocking unauthorized access attempts, and preventing potential cyber threats before they cause damage.',
+      accent: 'from-teal-500 to-teal-700',
     },
   ]
 
@@ -94,39 +96,35 @@ const SecurityApproach = () => {
 
         {/* Security Pillars - All Equal Layout */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-16 md:mb-20"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12 md:mb-16"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
         >
-          {pillars.map((pillar, index) => {
-            const IconComponent = pillar.icon
-            return (
-              <motion.div
-                key={index}
-                variants={cardVariants(index)}
-                className="bg-white rounded-xl p-6 md:p-8 shadow-md border border-gray-200 hover:shadow-lg hover:border-blue-200 transition-all duration-300 h-full flex flex-col"
-              >
-                {/* Icon */}
-                <div className="bg-blue-100 w-14 h-14 rounded-lg flex items-center justify-center mb-4">
-                  <IconComponent className="h-7 w-7 text-blue-700" />
-                </div>
-                {/* Content */}
-                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3">
-                  {pillar.title}
-                </h3>
-                <p className="text-gray-700 leading-relaxed flex-grow">
-                  {pillar.description}
-                </p>
-              </motion.div>
-            )
-          })}
+          {pillars.map((pillar, index) => (
+            <motion.div
+              key={index}
+              variants={cardVariants(index)}
+              className="bg-white rounded-xl p-6 md:p-8 shadow-md border-l-4 border-t border-r border-b border-gray-200 hover:shadow-lg transition-all duration-300 h-full flex flex-col group"
+              style={{ borderLeftColor: `var(--accent-${index})` }}
+            >
+              {/* Accent Bar */}
+              <div className={`h-1 w-20 bg-gradient-to-r ${pillar.accent} rounded-full mb-4`}></div>
+              {/* Content */}
+              <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3 group-hover:text-blue-700 transition-colors">
+                {pillar.title}
+              </h3>
+              <p className="text-gray-700 leading-relaxed flex-grow">
+                {pillar.description}
+              </p>
+            </motion.div>
+          ))}
         </motion.div>
 
         {/* Additional Security Features */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8"
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-0"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -136,14 +134,12 @@ const SecurityApproach = () => {
             <motion.div
               key={index}
               variants={cardVariants(index)}
-              className="bg-white rounded-xl p-6 md:p-8 shadow-md border border-gray-200 hover:shadow-lg hover:border-blue-200 transition-all duration-300"
+              className="bg-gradient-to-br from-gray-50 to-white rounded-xl p-6 md:p-8 shadow-md border border-gray-200 hover:shadow-lg transition-all duration-300 group"
             >
-              {/* Icon */}
-              <div className="bg-blue-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
-                <CheckCircle className="h-6 w-6 text-blue-700" />
-              </div>
+              {/* Accent Indicator */}
+              <div className={`h-1 w-16 bg-gradient-to-r ${feature.accent} rounded-full mb-4`}></div>
               {/* Content */}
-              <h4 className="text-lg md:text-xl font-bold text-gray-900 mb-3">
+              <h4 className="text-lg md:text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-700 transition-colors">
                 {feature.title}
               </h4>
               <p className="text-gray-700 leading-relaxed">

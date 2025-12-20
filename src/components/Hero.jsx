@@ -1,10 +1,12 @@
 import { useState, useEffect, useRef } from 'react'
-import { ChevronLeft, ChevronRight } from 'lucide-react'
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [touchStart, setTouchStart] = useState(null)
   const [touchEnd, setTouchEnd] = useState(null)
+  const [mouseStart, setMouseStart] = useState(null)
+  const [mouseEnd, setMouseEnd] = useState(null)
+  const [isDragging, setIsDragging] = useState(false)
   const autoSlideRef = useRef(null)
 
   const slides = [
@@ -74,9 +76,10 @@ const Hero = () => {
     }, 6000)
   }
 
-  // Swipe handlers for mobile
+  // Swipe/drag handlers for all devices
   const minSwipeDistance = 50
 
+  // Touch handlers
   const onTouchStart = (e) => {
     setTouchEnd(null)
     setTouchStart(e.targetTouches[0].clientX)
@@ -100,13 +103,45 @@ const Hero = () => {
     }
   }
 
+  // Mouse drag handlers for desktop
+  const onMouseDown = (e) => {
+    setIsDragging(true)
+    setMouseEnd(null)
+    setMouseStart(e.clientX)
+  }
+
+  const onMouseMove = (e) => {
+    if (!isDragging) return
+    setMouseEnd(e.clientX)
+  }
+
+  const onMouseUp = () => {
+    if (!isDragging) return
+    setIsDragging(false)
+    if (!mouseStart || !mouseEnd) return
+    const distance = mouseStart - mouseEnd
+    const isLeftDrag = distance > minSwipeDistance
+    const isRightDrag = distance < -minSwipeDistance
+
+    if (isLeftDrag) {
+      goToNext()
+    }
+    if (isRightDrag) {
+      goToPrevious()
+    }
+  }
+
   return (
     <section 
       id="home" 
-      className="relative text-white overflow-hidden min-h-[550px] sm:min-h-[600px] md:min-h-[650px] lg:min-h-[700px]"
+      className="relative text-white overflow-hidden min-h-[550px] sm:min-h-[600px] md:min-h-[650px] lg:min-h-[700px] cursor-grab active:cursor-grabbing"
       onTouchStart={onTouchStart}
       onTouchMove={onTouchMove}
       onTouchEnd={onTouchEnd}
+      onMouseDown={onMouseDown}
+      onMouseMove={onMouseMove}
+      onMouseUp={onMouseUp}
+      onMouseLeave={onMouseUp}
     >
       {/* Slides Container */}
       <div className="relative min-h-[550px] sm:min-h-[600px] md:min-h-[650px] lg:min-h-[700px]">
@@ -147,7 +182,7 @@ const Hero = () => {
                       key={btnIndex}
                       className={
                         button.primary
-                          ? 'btn-primary text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto'
+                          ? 'bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 hover:from-blue-700 hover:via-blue-800 hover:to-blue-900 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto'
                           : 'btn-secondary text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-4 border-white text-white hover:bg-white hover:text-gray-900 w-full sm:w-auto'
                       }
                     >
@@ -161,21 +196,6 @@ const Hero = () => {
         ))}
       </div>
 
-      {/* Navigation Arrows - Hidden on mobile, visible on tablet and desktop */}
-      <button
-        onClick={goToPrevious}
-        className="hidden md:flex absolute left-4 lg:left-8 top-1/2 -translate-y-1/2 z-20 p-3 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full transition-all duration-200 border border-white/20 items-center justify-center"
-        aria-label="Previous slide"
-      >
-        <ChevronLeft className="h-6 w-6 text-white" />
-      </button>
-      <button
-        onClick={goToNext}
-        className="hidden md:flex absolute right-4 lg:right-8 top-1/2 -translate-y-1/2 z-20 p-3 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full transition-all duration-200 border border-white/20 items-center justify-center"
-        aria-label="Next slide"
-      >
-        <ChevronRight className="h-6 w-6 text-white" />
-      </button>
 
       {/* Slide Indicators */}
       <div className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-2">

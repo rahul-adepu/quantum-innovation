@@ -1,5 +1,5 @@
 import { 
-  Shield, 
+  Activity, 
   FileCheck, 
   Brain, 
   Lock, 
@@ -11,7 +11,7 @@ import { motion } from 'framer-motion'
 const Services = () => {
   const services = [
     {
-      icon: Shield,
+      icon: Activity,
       title: 'Security Operations Center',
       description: 'Always-on protection with 24/7 monitoring, AI-enhanced threat detection, and expert response teams safeguarding your business around the clock.',
     },
@@ -101,7 +101,7 @@ const Services = () => {
       <div className="container-custom">
         {/* Section Header */}
         <motion.div
-          className="text-center mb-12 md:mb-16"
+          className="text-center mb-6 md:mb-8"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
@@ -121,7 +121,7 @@ const Services = () => {
           variants={badgeVariants}
         >
           <div className="inline-flex items-center px-6 py-3 bg-blue-700 text-white rounded-full">
-            <Shield className="h-5 w-5 mr-2" />
+            <Activity className="h-5 w-5 mr-2" />
             <span className="font-semibold">25+ Years building Saudi Arabia's cybersecurity excellence</span>
           </div>
         </motion.div>

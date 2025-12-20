@@ -1,11 +1,11 @@
-import { Shield, Handshake, Flag } from 'lucide-react'
+import { Layers, Handshake, Flag, Award, CheckCircle, GraduationCap } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { useEffect, useState, useRef } from 'react'
 
 const COUNTERS = [
-  { value: 25, suffix: '+', label: 'Years Experience', icon: Shield },
-  { value: 500, suffix: '+', label: 'Projects Completed', icon: Handshake },
-  { value: 1000, suffix: '+', label: 'Saudi Professionals Trained', icon: Flag },
+  { value: 25, suffix: '+', label: 'Years Experience', icon: Award },
+  { value: 500, suffix: '+', label: 'Projects Completed', icon: CheckCircle },
+  { value: 1000, suffix: '+', label: 'Saudi Professionals Trained', icon: GraduationCap },
   { value: 'Vision 2030', suffix: '', label: 'Committed Partner', icon: Flag },
 ]
 
@@ -16,7 +16,7 @@ const WhyChooseUs = () => {
 
   const reasons = [
     {
-      icon: Shield,
+      icon: Layers,
       title: 'Advanced Cybersecurity & AI Solutions',
       description: 'End-to-end protection combining enterprise security, intelligent automation, and 24/7 monitoring to defend against evolving threats while optimizing operations.',
     },
@@ -155,7 +155,7 @@ const WhyChooseUs = () => {
   }
 
   return (
-    <section id="why-choose-us" ref={sectionRef} className="section-padding bg-white">
+    <section id="why-choose-us" ref={sectionRef} className="section-padding bg-white pb-12 md:pb-16">
       <div className="container-custom">
         {/* Section Header */}
         <motion.div

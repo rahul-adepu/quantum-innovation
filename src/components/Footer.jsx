@@ -3,7 +3,7 @@ import { Phone, Mail, MapPin } from 'lucide-react'
 const Footer = () => {
   return (
     <footer className="bg-gray-900 text-gray-300">
-      <div className="container-custom section-padding">
+      <div className="container-custom pt-16 md:pt-20 lg:pt-24 pb-4 md:pb-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
@@ -19,7 +19,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-white font-semibold mb-4">Quick Links</h3>
+            <h3 className="text-white font-semibold mb-4 mt-0">Quick Links</h3>
             <ul className="space-y-2">
               <li>
                 <a href="#about-us" className="hover:text-blue-400 transition-colors">
@@ -56,7 +56,7 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h3 className="text-white font-semibold mb-4">Services</h3>
+            <h3 className="text-white font-semibold mb-4 mt-0">Services</h3>
             <ul className="space-y-2">
               <li>
                 <a href="#our-services" className="hover:text-blue-400 transition-colors">
@@ -93,7 +93,7 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-white font-semibold mb-4">Contact Us</h3>
+            <h3 className="text-white font-semibold mb-4 mt-0">Contact Us</h3>
             <ul className="space-y-3">
               <li className="flex items-start space-x-3">
                 <Phone className="h-5 w-5 text-blue-400 mt-0.5 flex-shrink-0" />
@@ -116,7 +116,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-gray-800 mt-12 pt-8">
+        <div className="border-t border-gray-800 mt-8 pt-6 pb-0">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
               © {new Date().getFullYear()} Quantum Innovation. All rights reserved.

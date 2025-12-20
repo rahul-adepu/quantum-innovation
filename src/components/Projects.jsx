@@ -9,13 +9,13 @@ const Projects = () => {
       link: '#',
     },
     {
-      image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80',
       category: 'Compliance Excellence',
       title: 'NCA ECC-2 Framework Compliance & Certification',
       link: '#',
     },
     {
-      image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80',
       category: 'AI Automation',
       title: 'AI-Powered Customer Service Transformation',
       link: '#',
@@ -29,7 +29,7 @@ const Projects = () => {
   ]
 
   return (
-    <section id="our-project" className="section-padding bg-gradient-to-b from-gray-50 to-white">
+    <section id="our-project" className="section-padding bg-gradient-to-b from-gray-50 to-white pb-12 md:pb-16">
       <div className="container-custom">
         {/* Section Header */}
         <div className="text-center mb-12 md:mb-16">
