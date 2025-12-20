@@ -15,7 +15,7 @@ const CTA = () => {
   }
 
   return (
-    <section className="section-padding bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 text-white relative overflow-hidden">
+    <section id="contact" className="section-padding bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 text-white relative overflow-hidden">
       {/* Background Image Overlay */}
       <div className="absolute inset-0">
         <img

@@ -140,15 +140,15 @@ const Services = () => {
               <motion.div
                 key={index}
                 variants={cardVariants(index)}
-                className="bg-white rounded-xl p-6 md:p-8 shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-100"
+                className="bg-white rounded-xl p-6 md:p-8 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 hover:border-blue-200 group"
               >
                 {/* Icon */}
-                <div className="bg-blue-100 w-14 h-14 rounded-lg flex items-center justify-center mb-4">
-                  <IconComponent className="h-7 w-7 text-blue-700" />
+                <div className="bg-blue-100 w-14 h-14 rounded-lg flex items-center justify-center mb-4 transition-colors duration-300 group-hover:bg-blue-700">
+                  <IconComponent className="h-7 w-7 text-blue-700 transition-colors duration-300 group-hover:text-white" />
                 </div>
 
                 {/* Title */}
-                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3">
+                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3 group-hover:text-blue-700 transition-colors duration-300">
                   {service.title}
                 </h3>
 

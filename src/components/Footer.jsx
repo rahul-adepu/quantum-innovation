@@ -1,4 +1,4 @@
-import { Shield, Phone, Mail, MapPin } from 'lucide-react'
+import { Phone, Mail, MapPin } from 'lucide-react'
 
 const Footer = () => {
   return (
@@ -7,9 +7,10 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
-            <div className="flex items-center space-x-2 mb-4">
-              <Shield className="h-6 w-6 text-blue-400" />
-              <span className="text-xl font-bold text-white">Quantum Innovation</span>
+            <div className="flex items-center mb-4">
+              <span className="text-2xl md:text-3xl font-bold text-white">
+                <span className="bg-gradient-to-r from-blue-400 via-blue-300 to-blue-400 bg-clip-text text-transparent">Quantum</span> Innovation
+              </span>
             </div>
             <p className="text-gray-400 mb-4">
               Your trusted partner in cybersecurity & AI innovation, building Saudi Arabia's digital future.

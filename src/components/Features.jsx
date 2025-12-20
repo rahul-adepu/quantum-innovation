@@ -90,15 +90,15 @@ const Features = () => {
               <motion.div
                 key={index}
                 variants={cardVariants(index)}
-                className="bg-gradient-to-br from-gray-50 to-white rounded-xl p-6 md:p-8 shadow-md hover:shadow-xl transition-shadow duration-300 border border-gray-100"
+                className="bg-white rounded-xl p-6 md:p-8 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 hover:border-blue-200 group"
               >
                 {/* Icon */}
-                <div className="bg-blue-700 w-16 h-16 rounded-xl flex items-center justify-center mb-5">
-                  <IconComponent className="h-8 w-8 text-white" />
+                <div className="bg-blue-100 w-16 h-16 rounded-xl flex items-center justify-center mb-5 transition-colors duration-300 group-hover:bg-blue-700">
+                  <IconComponent className="h-8 w-8 text-blue-700 transition-colors duration-300 group-hover:text-white" />
                 </div>
 
                 {/* Title */}
-                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3">
+                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3 group-hover:text-blue-700 transition-colors duration-300">
                   {feature.title}
                 </h3>
 

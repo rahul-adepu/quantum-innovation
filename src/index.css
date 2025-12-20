@@ -6,11 +6,35 @@
   body {
     @apply text-gray-900 antialiased;
   }
+  
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold leading-tight;
+  }
+  
+  h2 {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold leading-tight;
+  }
+  
+  h3 {
+    @apply text-xl md:text-2xl font-bold leading-snug;
+  }
+  
+  h4 {
+    @apply text-lg md:text-xl font-bold leading-snug;
+  }
+  
+  p {
+    @apply leading-relaxed;
+  }
 }
 
 @layer components {
   .btn-primary {
-    @apply bg-blue-700 hover:bg-blue-800 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200;
+    @apply bg-gradient-to-r from-blue-700 via-blue-800 to-blue-900 hover:from-blue-800 hover:via-blue-900 hover:to-blue-950 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg;
+  }
+  
+  .brand-gradient {
+    @apply bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 bg-clip-text text-transparent;
   }
   
   .btn-secondary {
@@ -18,7 +42,7 @@
   }
   
   .section-padding {
-    @apply py-16 md:py-20 lg:py-24;
+    @apply py-20 md:py-24 lg:py-28;
   }
   
   .container-custom {

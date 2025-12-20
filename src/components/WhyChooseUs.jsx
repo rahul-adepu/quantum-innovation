@@ -1,6 +1,6 @@
 import { Shield, Handshake, Flag } from 'lucide-react'
 import { motion } from 'framer-motion'
-import { useEffect, useState, useMemo } from 'react'
+import { useEffect, useState, useRef } from 'react'
 
 const COUNTERS = [
   { value: 25, suffix: '+', label: 'Years Experience', icon: Shield },
@@ -11,6 +11,8 @@ const COUNTERS = [
 
 const WhyChooseUs = () => {
   const [countersVisible, setCountersVisible] = useState(false)
+  const hasAnimatedRef = useRef(false)
+  const sectionRef = useRef(null)
 
   const reasons = [
     {
@@ -30,11 +32,35 @@ const WhyChooseUs = () => {
     },
   ]
 
-  // Counter animation
-  const [displayCounters, setDisplayCounters] = useState(COUNTERS.map((c) => typeof c.value === 'number' ? 0 : c.value))
+  // Counter animation - initialize with 0 for numbers, final value for strings
+  const [displayCounters, setDisplayCounters] = useState(
+    COUNTERS.map((c) => typeof c.value === 'number' ? 0 : c.value)
+  )
+
+  // Check if section is already visible on mount (page refresh scenario)
+  useEffect(() => {
+    const checkInitialVisibility = () => {
+      if (sectionRef.current) {
+        const rect = sectionRef.current.getBoundingClientRect()
+        const isVisible = rect.top < window.innerHeight && rect.bottom > 0
+        if (isVisible && !hasAnimatedRef.current) {
+          // Section already visible on load - set final values without animation
+          setDisplayCounters(COUNTERS.map((c) => typeof c.value === 'number' ? c.value : c.value))
+          hasAnimatedRef.current = true
+        }
+      }
+    }
+    checkInitialVisibility()
+    // Also check after a short delay to account for any layout shifts
+    const timeout = setTimeout(checkInitialVisibility, 100)
+    return () => clearTimeout(timeout)
+  }, [])
 
   useEffect(() => {
-    if (countersVisible) {
+    // Only animate if section enters viewport and hasn't been animated yet
+    if (countersVisible && !hasAnimatedRef.current) {
+      hasAnimatedRef.current = true
+      
       const timers = []
       
       COUNTERS.forEach((counter, index) => {
@@ -129,7 +155,7 @@ const WhyChooseUs = () => {
   }
 
   return (
-    <section id="why-choose-us" className="section-padding bg-white">
+    <section id="why-choose-us" ref={sectionRef} className="section-padding bg-white">
       <div className="container-custom">
         {/* Section Header */}
         <motion.div
@@ -187,7 +213,7 @@ const WhyChooseUs = () => {
           viewport={{ once: true, amount: 0.3 }}
           variants={containerVariants}
           onViewportEnter={() => {
-            if (!countersVisible) {
+            if (!countersVisible && !hasAnimatedRef.current) {
               setCountersVisible(true)
             }
           }}

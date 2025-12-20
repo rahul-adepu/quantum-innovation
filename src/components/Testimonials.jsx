@@ -99,7 +99,7 @@ const Testimonials = () => {
             <motion.div
               key={index}
               variants={cardVariants(index)}
-              className="bg-white rounded-xl p-6 md:p-8 shadow-md border border-gray-100 hover:shadow-lg transition-shadow duration-300 relative"
+              className="bg-white rounded-xl p-6 md:p-8 shadow-md border border-gray-100 hover:shadow-lg hover:border-blue-200 transition-all duration-300 relative"
             >
               {/* Quote Icon */}
               <div className="absolute top-6 right-6 opacity-10">
@@ -133,20 +133,12 @@ const Testimonials = () => {
 
         {/* Support CTA Box */}
         <motion.div
-          className="bg-gradient-to-r from-blue-700 to-blue-900 rounded-xl p-8 md:p-12 text-white text-center relative overflow-hidden"
+          className="bg-gradient-to-r from-blue-700 to-blue-900 rounded-xl p-8 md:p-12 text-white text-center"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
           variants={headerVariants}
         >
-          {/* Background Pattern */}
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute inset-0" style={{
-              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-            }}></div>
-          </div>
-
-          <div className="relative z-10">
             <p className="text-lg md:text-xl mb-6 text-blue-100">
               If you have any questions or need help, contact our team.
             </p>
@@ -162,8 +154,7 @@ const Testimonials = () => {
                 Contact Us
               </button>
             </div>
-          </div>
-        </motion.div>
+          </motion.div>
       </div>
     </section>
   )

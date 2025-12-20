@@ -103,18 +103,11 @@ const Hero = () => {
   return (
     <section 
       id="home" 
-      className="relative bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 text-white overflow-hidden min-h-[550px] sm:min-h-[600px] md:min-h-[650px] lg:min-h-[700px]"
+      className="relative text-white overflow-hidden min-h-[550px] sm:min-h-[600px] md:min-h-[650px] lg:min-h-[700px]"
       onTouchStart={onTouchStart}
       onTouchMove={onTouchMove}
       onTouchEnd={onTouchEnd}
     >
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-        }}></div>
-      </div>
-
       {/* Slides Container */}
       <div className="relative min-h-[550px] sm:min-h-[600px] md:min-h-[650px] lg:min-h-[700px]">
         {slides.map((slide, index) => (
@@ -122,6 +115,10 @@ const Hero = () => {
             key={index}
             className={`absolute inset-0 transition-opacity duration-1000 ${
               index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
+            } ${
+              index === 0 
+                ? 'bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900' 
+                : 'bg-gradient-to-br from-blue-900 via-slate-800 to-gray-900'
             }`}
           >
             <div className="container-custom py-12 sm:py-16 md:py-20 lg:py-24 min-h-[550px] sm:min-h-[600px] md:min-h-[650px] lg:min-h-[700px] flex items-center">
