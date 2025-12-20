@@ -4,44 +4,26 @@ A professional, enterprise-grade frontend website for Quantum Innovation, a cybe
 
 ## Tech Stack
 
-- **React** (Vite)
-- **Tailwind CSS**
-- **Lucide React** (Icons)
+- **React** - UI library
+- **Vite** - Build tool and dev server
+- **Tailwind CSS** - Utility-first CSS framework
+- **Framer Motion** - Animation library
+- **Lucide React** - Icon library
 
-## Getting Started
-
-### Installation
+## How to Clone and Run
 
 ```bash
+# Clone the repository
+git clone https://github.com/rahul-adepu/quantum-innovation.git
+
+# Navigate to the project directory
+cd quantum-innovation
+
+# Install dependencies
 npm install
-```
 
-### Development
-
-```bash
+# Run the development server
 npm run dev
-```
-
-### Build
-
-```bash
-npm run build
-```
-
-### Preview
-
-```bash
-npm run preview
-```
-
-## Project Structure
-
-```
-src/
- ├── components/     # React components
- ├── data/          # Static content data
- ├── App.jsx        # Main app component
- └── main.jsx       # Entry point
 ```
 
 ## Features
@@ -51,3 +33,11 @@ src/
 - Enterprise-grade cybersecurity theme
 - Smooth navigation
 - Accessible components
+
+---
+
+<div align="center">
+
+**Thank you!**
+
+</div>
